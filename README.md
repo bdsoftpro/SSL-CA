@@ -21,10 +21,10 @@ openssl ca -config openssl_intermediate.cnf -extensions server_cert -days 3750 -
 cd ../  
   
 ## Verify the certificate.
-Intermediate CA:  
+**Intermediate CA:**  
 openssl verify -verbose -CAfile ca/certs/ca.webrtc.crt.pem intermediate/certs/int.webrtc.crt.pem  
   
-Server CA  
+**Server CA**  
 openssl verify -verbose -CAfile intermediate/certs/chain.webrtc.crt.pem server/certs/server.crt.pem  
 or  
 openssl verify -CAfile ca/certs/ca.webrtc.crt.pem -untrusted intermediate/certs/int.webrtc.crt.pem server/certs/server.crt.pem  
