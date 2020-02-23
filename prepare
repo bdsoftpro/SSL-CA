@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Root helper files
+mkdir -p ca/{newcerts,certs,crl,private,requests}
+touch ca/index.txt
+touch ca/index.txt.attr
+echo '1000' > ca/serial
+touch ca/private/.rand
+
+# Intermediate helper files
+mkdir -p intermediate/{newcerts,certs,crl,private,requests}
+touch intermediate/index.txt
+touch intermediate/index.txt.attr
+echo '1000' > intermediate/serial
+echo '1234' > intermediate/crlnumber
+touch intermediate/private/.rand
